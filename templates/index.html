@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QuantumSafeX</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>QuantumSafeX</h1>
+    <p>Post-Quantum Cryptography Demo (Running on Localhost)</p>
+
+    <form method="POST">
+        <textarea name="message" placeholder="Enter secure message..." required></textarea>
+        <button type="submit">Encrypt & Secure</button>
+    </form>
+
+    {% if result %}
+    <div class="output">
+        <p><b>Public Key:</b> {{ result.public_key }}</p>
+        <p><b>Secret Key:</b> {{ result.secret_key }}</p>
+        <p><b>Encrypted Data:</b> {{ result.encrypted }}</p>
+        <p><b>Signature:</b> {{ result.signature }}</p>
+        <p class="success">{{ result.status }}</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
